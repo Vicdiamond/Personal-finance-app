@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PublicSans";
+  src: url("/fonts/static/PublicSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PublicSansItalic";
+  src: url("/fonts/PublicSans-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f8f4f0;
+  border-radius: 9px;
+}
+progress::-webkit-progress-value {
+  border-radius: 8px;
+}
+
+.progress-bar-green::-webkit-progress-value {
+  background-color: #277c78;
+}
+.progress-bar-red::-webkit-progress-value {
+  background-color: #c94736;
+}
+
+.progress-bar-yellow::-webkit-progress-value {
+  background-color: #f2cdac;
+}
+
+.progress-bar-cyan::-webkit-progress-value {
+  background-color: #82c9d7;
+}
+.progress-bar-navy::-webkit-progress-value {
+  background-color: #626070;
+}
+.progress-bar-purple::-webkit-progress-value {
+  background-color: #826cb0;
+}
+.progress-bar-turquoise::-webkit-progress-value {
+  background-color: #597c7c;
+}
+.progress-bar-brown::-webkit-progress-value {
+  background-color: #93674f;
+}
+.progress-bar-magenta::-webkit-progress-value {
+  background-color: #934f6f;
+}
+.progress-bar-navygrey::-webkit-progress-value {
+  background-color: #97a0ac;
+}
+.progress-bar-armygreen::-webkit-progress-value {
+  background-color: #7f9161;
+}
+.progress-bar-gold::-webkit-progress-value {
+  background-color: #cab361;
+}
+.progress-bar-orange::-webkit-progress-value {
+  background-color: #be6c49;
+}
+body {
+  font-family: "PublicSans", sans-serif;
+}
+
+.font-family-italic {
+  font-family: "PublicSansItalic", sans-serif;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Default for mobile: Hide text */
+select {
+  color: transparent; /* Make the text invisible */
+  /* text-indent: -9999px;  */
+}
+
+/* Show text when the select is focused (likely open) */
+select:focus {
+  color: inherit; /* Restore the text color */
+  text-indent: 0; /* Reset text indentation */
+}
+
+/* For larger screens: Always show the text */
+
+*/ .spinnerMini {
+  width: 20px;
+  --b: 8px; /* the border thickness */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #98908b) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: s4 1s infinite steps(10);
+}
+@keyframes s4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.shapes-4 {
+  width: 40px;
+  height: 40px;
+  color: #98908b;
+  background: conic-gradient(
+      from -45deg at top 20px left 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    ),
+    conic-gradient(
+      from 45deg at right 20px top 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    ),
+    conic-gradient(
+      from 135deg at bottom 20px left 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    ),
+    conic-gradient(
+      from -135deg at left 20px top 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    );
+  animation: sh4 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+@keyframes sh4 {
+  50% {
+    width: 60px;
+    height: 60px;
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* LoadingIndicator.css */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Optional, depending on your layout */
+}
+
+.loading-icon {
+  width: 100px; /* Initial size */
+  height: 100px; /* Initial size */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
