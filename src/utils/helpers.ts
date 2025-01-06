@@ -41,9 +41,15 @@ export function formatNumber(number: number) {
 }
 
 export async function getData(endpoint: string) {
-  const res = await fetch(`${FETCH_URL}/${endpoint}`);
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${FETCH_URL}/${endpoint}`);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    if (error) {
+      throw new Error("Error getting data");
+    }
+  }
 }
 
 export function getColor(theme: string) {

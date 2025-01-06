@@ -20,6 +20,7 @@ function useAdjustPotBalance(
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["pots"] });
       queryClient.invalidateQueries({ queryKey: ["balance"] });
+      toast.success("Pot balance adjusted successfully");
     },
     onError: (error) => toast.error(error.message),
   });
