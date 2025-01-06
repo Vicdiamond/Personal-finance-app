@@ -44,8 +44,11 @@ function AdjustPotBalance({
       return toast.error("Insufficient pot balance");
     }
 
-    adjustPotBalance();
-    onCloseModal?.();
+    adjustPotBalance(undefined, {
+      onSuccess: () => {
+        onCloseModal?.();
+      },
+    });
   }
 
   const description = isAdding

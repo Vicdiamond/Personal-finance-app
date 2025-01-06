@@ -88,7 +88,7 @@ select:focus {
 
 /* For larger screens: Always show the text */
 
-*/ .spinnerMini {
+.spinnerMini {
   width: 20px;
   --b: 8px; /* the border thickness */
   aspect-ratio: 1;
