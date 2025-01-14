@@ -24,7 +24,7 @@ export const handler: Handler = async (event) => {
         headers: {
           accept: "application/json",
           "content-type": "application/json",
-          "mono-sec-key": MONO_SECRET_KEY,
+          "mono-sec-key": MONO_SECRET_KEY || "",
         },
         body: JSON.stringify({
           customer: { email, name },
